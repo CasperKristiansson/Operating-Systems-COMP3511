@@ -1,0 +1,1 @@
+ls -lh > tmp_out_only.txt

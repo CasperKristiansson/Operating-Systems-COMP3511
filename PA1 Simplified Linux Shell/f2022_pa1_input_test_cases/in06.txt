@@ -1,0 +1,1 @@
+wc -l < myshell.c > tmp_in_then_out.txt
