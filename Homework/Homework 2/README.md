@@ -121,19 +121,19 @@ Draw Gantt charts for the scheduling algorithms listed below and compute the ave
 
 1)
 
-![](RackMultipart20221021-1-ahksnm_html_1c1304241ed0002.png)
+![Picture1](https://user-images.githubusercontent.com/36133918/197171520-5f88d42a-b847-4706-aceb-7ab7a03e783a.png)
 
 2)
 
-![](RackMultipart20221021-1-ahksnm_html_d09d04e97d77a7be.png)
+![Picture2](https://user-images.githubusercontent.com/36133918/197171307-2e42b6e7-5a51-4831-99e0-6a7de0fee160.png)
 
 3)
 
-![](RackMultipart20221021-1-ahksnm_html_f68d91793e496d28.png)
+![Picture3](https://user-images.githubusercontent.com/36133918/197171329-43dbb619-ed50-4933-80ba-33e2a74cc3a8.png)
 
 4)
+![Picture4](https://user-images.githubusercontent.com/36133918/197171353-586e55f9-58e9-4223-b851-eafb92674926.png)
 
-![](RackMultipart20221021-1-ahksnm_html_c9bb8d2498e7a15f.png)
 
 **3. [15 points] Priority Scheduling with Round Robin.**
 
@@ -149,7 +149,7 @@ Draw Gantt charts for priority scheduling with RR (time quantum = 3) and compute
 | P4 | 11 | 6 | 2 |
 | P5P6 | 1516 | 32 | 21 |
 
-![](RackMultipart20221021-1-ahksnm_html_fbc37cffd83bd798.png)
+![Picture5](https://user-images.githubusercontent.com/36133918/197171389-e194840b-b75c-4992-92f9-6f5c63f4ddbd.png)
 
 **4.**** [25 points] Multi-Level Feedback Queue**
 
@@ -159,7 +159,7 @@ Draw Gantt charts for a MLFQ scheduling and compute the average turnaround time 
 2. Q1: RR with time quantum 6
 3. Q2: FCFS
 
-![](RackMultipart20221021-1-ahksnm_html_9ef1ba5c43915748.png)
+![Picture1](https://user-images.githubusercontent.com/36133918/197171419-f9ac2b60-bcd1-45a0-81da-e59158ef7ceb.png)
 
 | Process | Arrival Time | Burst Time |
 | --- | --- | --- |
@@ -169,7 +169,7 @@ Draw Gantt charts for a MLFQ scheduling and compute the average turnaround time 
 | P4 | 13 | 6 |
 | P5P6 | 1620 | 32 |
 
-![](RackMultipart20221021-1-ahksnm_html_5a0d6e458bd2c20f.png)
+![Picture6](https://user-images.githubusercontent.com/36133918/197171460-d92c3c78-3b78-4cac-965b-3131fa8334ee.png)
 
 **5. [20 points] Fork and Pipe Programming**
 
