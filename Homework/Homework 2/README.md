@@ -110,7 +110,8 @@ Consider the following set of processes, with the length of the CPU burst time g
 | P2 | 1 | 3 |
 | P3 | 8 | 6 |
 | P4 | 13 | 6 |
-| P5P6 | 1620 | 32 |
+| P5 | 16 | 3 |
+| P6 | 20 | 2 |
 
 Draw Gantt charts for the scheduling algorithms listed below and compute the average turnaround time and the average waiting time for each algorithm.
 
@@ -147,7 +148,8 @@ Draw Gantt charts for priority scheduling with RR (time quantum = 3) and compute
 | P2 | 1 | 3 | 5 |
 | P3 | 8 | 7 | 1 |
 | P4 | 11 | 6 | 2 |
-| P5P6 | 1516 | 32 | 21 |
+| P5 | 15 | 3 | 2 |
+| P6 | 16 | 2 | 1
 
 ![Picture5](https://user-images.githubusercontent.com/36133918/197171389-e194840b-b75c-4992-92f9-6f5c63f4ddbd.png)
 
@@ -167,7 +169,8 @@ Draw Gantt charts for a MLFQ scheduling and compute the average turnaround time 
 | P2 | 1 | 3 |
 | P3 | 8 | 6 |
 | P4 | 13 | 6 |
-| P5P6 | 1620 | 32 |
+| P5 | 16 | 3 |
+| P6 | 20 | 2 |
 
 ![Picture6](https://user-images.githubusercontent.com/36133918/197171460-d92c3c78-3b78-4cac-965b-3131fa8334ee.png)
 
