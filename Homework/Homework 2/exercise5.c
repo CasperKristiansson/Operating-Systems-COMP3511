@@ -9,17 +9,17 @@ int main() {
     int secret_length = strlen(secret_msg);
     int pfds[2];
     
-    pipe(pfds);                 // Hint: invoke pipe() here
+    pipe(pfds);                                         // Hint: invoke pipe() here
     pid_t pid = fork();
-    if ( pid > 0 ) {            // parent
-        wait(0);                // wait for the child
-        close(pfds[1]);         // Hint: invoke close() here
-        dup(pfds[0]);           // Hint: invoke read here
+    if ( pid > 0 ) {                                    // parent
+        wait(0);                                        // wait for the child
+        close(0);                                       // Hint: invoke close() here
+        read(pfds[0], msg, secret_length);              // Hint: invoke read here
         printf("The message in parent is %s\n", msg);
-    } else {                    // child
+    } else {                                            // child
         strcpy(msg, secret_msg);
-        close(pfds[0]);         // Hint: invoke close() here
-        dup(pfds[0]);           // Hint: invoke write here
+        close(0);                                       // Hint: invoke close() here
+        write(pfds[1], secret_msg, secret_length);      // Hint: invoke write here
         printf("The message in child is %s\n", msg);
     }
     return 0;
