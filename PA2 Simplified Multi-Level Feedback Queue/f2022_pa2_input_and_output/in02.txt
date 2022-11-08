@@ -1,0 +1,16 @@
+# COMP3511 PA2 (Fall 2022)
+# An input file for a Simplified Multi-level Feedback Queue (MLFQ)
+# Empty lines and lines starting with '#' are ignored
+
+tq0 = 4
+tq1 = 8
+
+# The process table definition
+# We assume the processes are sorted by the arrival time
+process_table_size = 5
+process_table = 
+P1 0 10
+P2 2 15
+P3 5 2
+P4 12 14
+P5 18 6

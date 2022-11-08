@@ -1,0 +1,15 @@
+tq0 = 2
+tq1 = 4
+process_table = 
+Process	Arrival	Burst
+A	0	2
+B	2	2
+C	4	2
+D	6	2
+E	8	2
+F	10	2
+G	12	2
+H	14	2
+I	16	2
+J	18	10
+Gantt Chart = 0 A 2 B 4 C 6 D 8 E 10 F 12 G 14 H 16 I 18 J 28 
