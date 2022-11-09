@@ -264,19 +264,94 @@ void print_parsed_values() {
     process_table_print(process_table, process_table_size);
 }
 
-// TODO: Implementation of MLFQ algorithm
 void mlfq() {
-
-    // Initialize the gantt chart
     struct GanttChartItem chart[MAX_GANTT_CHART];
     int sz_chart = 0;
 
-    // TODO: implement your MLFQ algorithm here
-    
+    int total_burst_time = 0;
 
+    for (int i = 0; i < process_table_size; i++) {
+        total_burst_time += process_table[i].burst_time;
+    }
 
-    // At the end, uncomment this line to display the final Gantt chart
-    // gantt_chart_print(chart, sz_chart);
+    int time = 0;
+
+    struct Queue queue0;
+    struct Queue queue1;
+    struct Queue queue2;
+
+    int queue0_burst_time = 0;
+    int queue1_burst_time = 0;
+    int queue2_burst_time = 0;
+
+    queue_init(&queue0);
+    queue_init(&queue1);
+    queue_init(&queue2);
+
+    while (time < total_burst_time) {
+        for (int i = 0; i < process_table_size; i++) {
+            if (process_table[i].arrival_time == time) {
+                queue_enqueue(&queue0, i);
+            }
+        }
+
+        if (queue0_burst_time >= tq0) {
+            queue_enqueue(&queue1, queue_peek(&queue0));
+            queue_dequeue(&queue0);
+            queue0_burst_time = 0;
+        }
+
+        if (queue1_burst_time >= tq1) {
+            queue_enqueue(&queue2, queue_peek(&queue1));
+            queue_dequeue(&queue1);
+            queue1_burst_time = 0;
+        }
+
+        if (!queue_is_empty(&queue0)) {
+            int process = queue_peek(&queue0);
+
+            if (process_table[process].burst_time != 0) {
+                process_table[process].burst_time--;
+                queue0_burst_time++;
+                time++;
+
+                gantt_chart_update(chart, &sz_chart, process_table[process].name, 1);
+            } else {
+                queue_dequeue(&queue0);
+                queue0_burst_time = 0;
+            }
+        } else if (!queue_is_empty(&queue1)) {
+            int process = queue_peek(&queue1);
+
+            if (process_table[process].burst_time != 0) {
+                process_table[process].burst_time--;
+                queue1_burst_time++;
+                time++;
+
+                gantt_chart_update(chart, &sz_chart, process_table[process].name, 1);
+            } else {
+                queue_dequeue(&queue1);
+                queue1_burst_time = 0;
+            }
+        } else if (!queue_is_empty(&queue2)) {
+            int process = queue_peek(&queue2);
+
+            if (process_table[process].burst_time != 0) {
+                process_table[process].burst_time--;
+                queue2_burst_time++;
+                time++;
+
+                gantt_chart_update(chart, &sz_chart, process_table[process].name, 1);
+            } else {
+                queue_dequeue(&queue2);
+                queue2_burst_time = 0;
+            }
+        } else {
+            time++;
+        }
+    }
+
+    gantt_chart_print(chart, sz_chart);
 }
 
 
