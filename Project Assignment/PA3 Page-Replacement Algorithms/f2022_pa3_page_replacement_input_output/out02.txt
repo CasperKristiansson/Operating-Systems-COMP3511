@@ -1,0 +1,25 @@
+algorithm = OPT
+frames_available = 3
+reference_string_length = 20
+reference_string = 7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1 
+7: 7     
+0: 7 0   
+1: 7 0 1 
+2: 2 0 1 
+0: No Page Fault
+3: 2 0 3 
+0: No Page Fault
+4: 2 4 3 
+2: No Page Fault
+3: No Page Fault
+0: 2 0 3 
+3: No Page Fault
+2: No Page Fault
+1: 2 0 1 
+2: No Page Fault
+0: No Page Fault
+1: No Page Fault
+7: 7 0 1 
+0: No Page Fault
+1: No Page Fault
+Total Page Fault: 9

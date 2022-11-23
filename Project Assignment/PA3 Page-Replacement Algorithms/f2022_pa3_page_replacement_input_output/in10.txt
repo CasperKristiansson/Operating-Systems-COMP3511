@@ -1,0 +1,11 @@
+# COMP3511 PA3 (Fall 2022)
+# Page replacement algorithm
+# Empty lines and lines starting with '#' are ignored
+
+algorithm = OPT
+
+frames_available = 2
+
+reference_string_length = 8
+
+reference_string = 0 1 0 0 1 1 2 3

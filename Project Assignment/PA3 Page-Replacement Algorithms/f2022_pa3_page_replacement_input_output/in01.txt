@@ -1,0 +1,13 @@
+# COMP3511 PA3 (Fall 2022)
+# Page replacement algorithm
+# Empty lines and lines starting with '#' are ignored
+
+algorithm = FIFO
+
+frames_available = 3
+
+reference_string_length = 20
+
+reference_string = 7 0 1 2 0 3 0 4 2 3 0 3 2 1 2 0 1 7 0 1
+
+
