@@ -290,7 +290,6 @@ void algorithm_FIFO() {
 }
 
 void algorithm_OPT() {
-    // TODO: Implement the OPT algorithm here
     int fault_count = 0;
     int frames_used = 0;
 
@@ -341,7 +340,46 @@ void algorithm_OPT() {
 }
 
 void algorithm_LRU() {
-    // TODO: Implement the LRU algorithm here
+    int last_used[frames_available];
+    int fault_count = 0;
+    int frames_used = 0;
+
+    for(int i = 0; i < frames_available; i++) {
+        last_used[i] = -1;
+    }
+
+    for(int i = 0; i < reference_string_length; i++) {
+        int exists = 0;
+
+        for(int j = 0; j < frames_available; j++) {
+            if(frames[j] == reference_string[i]) {
+                exists = 1;
+                last_used[j] = i;
+                break;
+            }
+        }
+
+        if(!exists) {
+            int min_used = i;
+            int min_index = 0;
+
+            for(int j = 0; j < frames_available; j++) {
+                if(last_used[j] < min_used) {
+                    min_used = last_used[j];
+                    min_index = j;
+                }
+            }
+
+            frames[min_index] = reference_string[i];
+            last_used[min_index] = i;
+            fault_count++;
+            display_fault_frame(reference_string[i]);
+        } else {
+            printf("%d: No Page Fault\n", reference_string[i]);
+        }
+    }
+
+    printf("Total Page Fault: %d\n", fault_count);
 }
 
 void initialize_frames() {
