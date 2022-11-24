@@ -141,9 +141,6 @@ void parse_input() {
                     }
                 }
             }
-            
-
-
         }
     }
 }
@@ -244,7 +241,52 @@ void display_fault_frame(int current_frame) {
 
 
 void algorithm_FIFO() {
-   // TODO: Implement the FIFO algorithm here
+    struct Queue q;
+    queue_init(&q);
+    int fault_count = 0;
+    int queue_size = 0;
+
+    for (int i = 0; i < reference_string_length; i++) {
+        int exists = 0;
+
+        for (int j = 0; j < frames_available; j++) {
+            if (frames[j] == reference_string[i]) {
+                exists = 1;
+                break;
+            }
+        }
+
+        if (!exists) {
+            int old_page = queue_peek(&q);
+
+            if (queue_size == frames_available) {
+                for (int j = 0; j < frames_available; j++) {
+                    if (frames[j] == old_page) {
+                        frames[j] = reference_string[i];
+                        break;
+                    }
+                }
+
+                queue_dequeue(&q);
+                queue_size--;
+            } else {
+                int j = 0;
+                while (frames[j] != UNFILLED_FRAME) j++;
+
+                frames[j] = reference_string[i];
+            }
+
+            queue_enqueue(&q, reference_string[i]);
+            queue_size++;
+
+            fault_count++;
+            display_fault_frame(reference_string[i]);
+        } else {
+            printf("%d: No Page Fault\n", reference_string[i]);
+        }
+    }
+
+    printf("Total Page Fault: %d\n", fault_count);
 }
 
 void algorithm_OPT() {
